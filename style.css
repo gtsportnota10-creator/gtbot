@@ -119,7 +119,7 @@ button {
 /* ============================
    MOBILE — AINDA MAIOR
 ============================ */
-@media (max-width: 600px) {
+@media (max-width: 100px) {
 
   html {
     font-size: 22px; /* GIGANTE NO CELULAR */
@@ -133,6 +133,7 @@ button {
     text-align: center;
   }
 }
+
 
 
 
