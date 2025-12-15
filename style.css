@@ -149,11 +149,12 @@ button {
   /* QUANTIDADE */
   td:nth-child(4) input {
     font-size: 1.1rem;
-    padding: 18px;
+    padding: 1px;
     text-align: center;
   }
 
 }
+
 
 
 
