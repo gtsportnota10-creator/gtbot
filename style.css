@@ -140,53 +140,44 @@ button {
     }
 }
 /* ============================
-   AJUSTE PARA CELULAR
+   AJUSTE MOBILE – TABELA FIXA
 ============================ */
 @media (max-width: 768px) {
 
-  body {
-    padding: 10px;
-  }
-
   table {
     width: 100%;
-    border-collapse: collapse;
+    table-layout: fixed; /* força respeitar larguras */
   }
 
-  thead {
-    display: none; /* esconde cabeçalho no celular */
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 70px; /* TAMANHO */
   }
 
-  tbody tr {
-    display: block;
-    margin-bottom: 15px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    padding: 10px;
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 70px; /* NÚMERO */
   }
 
-  tbody td {
-    display: flex;
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 60px; /* QUANTIDADE */
+  }
+
+  td input {
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 0;
-    border: none;
+    font-size: 13px;
+    padding: 4px;
   }
 
-  tbody td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    color: #444;
-  }
-
-  input {
-    width: 55%;
+  th,
+  td {
+    padding: 4px;
   }
 
   .btn-remover {
-    width: 100%;
-    margin-top: 10px;
+    padding: 4px 6px;
+    font-size: 12px;
   }
 }
 
