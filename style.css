@@ -1,161 +1,151 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* ============================
-   ESCALA GERAL MUITO MAIOR
-============================ */
-html {
-  font-size: 22px; /* BASE GIGANTE */
-}
+/* =========================
+   ESTILO GERAL
+========================= */
 
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   margin: 0;
-  background: #f2f2f2;
+  padding: 0;
 }
 
 .app {
   max-width: 1200px;
-  margin: auto;
-  padding: 24px;
+  margin: 20px auto;
+  padding: 10px;
 }
 
-/* TÍTULOS */
-h1 {
+.header h1 {
+  text-align: center;
   font-size: 2rem;
-  margin-bottom: 24px;
 }
 
-h2 {
-  font-size: 1.4rem;
-  margin: 28px 0 14px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 8px;
+.card {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* CAMPOS CLIENTE */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-input {
-  padding: 18px;
-  font-size: 1.1rem;
-  border: 2px solid #999;
-  border-radius: 12px;
+.campo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-/* ============================
-   TABELA
-============================ */
-.tabela-wrapper {
-  overflow-x: auto;
+.campo input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 th {
-  background: #e0e0e0;
-  font-size: 1.05rem;
-  padding: 16px;
-  text-align: left;
-}
-
-td {
-  padding: 14px;
+  background-color: #f7f7f7;
 }
 
 td input {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
   width: 100%;
-  padding: 16px;
-  font-size: 1.05rem;
-  border-radius: 10px;
+  box-sizing: border-box;
 }
 
-/* COLUNAS CONTROLADAS (MESMO GRANDES) */
-th:nth-child(2),
-td:nth-child(2) { width: 125px; }
-
-th:nth-child(3),
-td:nth-child(3) { width: 125px; }
-
-th:nth-child(4),
-td:nth-child(4) { width: 105px; }
-
-/* ============================
-   BOTÕES
-============================ */
 button {
   cursor: pointer;
   border: none;
-  border-radius: 14px;
-  padding: 20px;
-  font-size: 1.1rem;
-}
-
-.btn-sec {
-  margin-top: 18px;
-  background: #d6d6d6;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
 .btn-main {
-  width: 100%;
-  margin-top: 20px;
-  background: #007bff;
+  background-color: #4CAF50;
+  color: white;
+  margin-right: 10px;
+}
+
+.btn-sec {
+  background-color: #2196F3;
   color: white;
 }
 
-.compartilhar {
-  background: #25d366;
-}
-
+/* =========================
+   MOBILE — INDIVIDUAL
+========================= */
 @media (max-width: 600px) {
 
   html {
-    font-size: 22px;
+    font-size: 18px; /* base maior no celular */
   }
 
-  /* =========================
-     INPUTS DA TABELA (LINHA)
-  ========================== */
-
-  /* NOME */
-  td:nth-child(1) input {
-    font-size: 1.25rem;
-    padding: 22px;
+  .grid {
+    grid-template-columns: 1fr; /* cliente em coluna */
+    gap: 15px;
   }
 
-  /* TAMANHO */
-  td:nth-child(2) input {
-    font-size: 1.1rem;
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* LARGURA E ALTURA DAS CAIXAS DE TEXTO DA TABELA */
+  td:nth-child(1) input {  /* NOME */
+    font-size: 1.5rem;
+    padding: 20px;
+    width: 150px;
+  }
+
+  td:nth-child(2) input {  /* TAMANHO */
+    font-size: 1.3rem;
     padding: 18px;
+    width: 80px;
     text-align: center;
   }
 
-  /* NÚMERO */
-  td:nth-child(3) input {
-    font-size: 1.05rem;
-    padding: 16px;
+  td:nth-child(3) input {  /* NÚMERO */
+    font-size: 1.3rem;
+    padding: 18px;
+    width: 80px;
     text-align: center;
   }
 
-  /* QUANTIDADE */
-  td:nth-child(4) input {
-    font-size: 1.1rem;
-    padding: 1px;
+  td:nth-child(4) input {  /* QUANTIDADE */
+    font-size: 1.3rem;
+    padding: 18px;
+    width: 80px;
     text-align: center;
+  }
+
+  /* BOTÕES MAIORES */
+  button {
+    font-size: 1.3rem;
+    padding: 18px 24px;
   }
 
 }
-
-
 
 
 
