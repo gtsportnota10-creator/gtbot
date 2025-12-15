@@ -11,34 +11,37 @@ body {
 .app {
   max-width: 1000px;
   margin: auto;
-  padding: 10px;
+  padding: 12px;
 }
 
+/* TÍTULOS */
 h1 {
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 
 h2 {
-  font-size: 15px;
-  margin: 14px 0 6px;
+  font-size: 16px;
+  margin: 16px 0 6px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 4px;
 }
 
+/* CAMPOS CLIENTE */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 10px;
 }
 
 input {
-  padding: 6px;
+  padding: 8px;
   font-size: 14px;
   border: 1px solid #bbb;
   border-radius: 6px;
 }
 
+/* TABELA */
 .tabela-wrapper {
   overflow-x: auto;
 }
@@ -62,10 +65,11 @@ td {
 
 td input {
   width: 100%;
-  padding: 4px;
+  padding: 6px;
   font-size: 13px;
 }
 
+/* larguras compactas */
 th:nth-child(2),
 td:nth-child(2) { width: 70px; }
 
@@ -75,22 +79,23 @@ td:nth-child(3) { width: 70px; }
 th:nth-child(4),
 td:nth-child(4) { width: 60px; }
 
+/* BOTÕES */
 button {
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  padding: 8px;
+  padding: 10px;
   font-size: 14px;
 }
 
 .btn-sec {
-  margin-top: 6px;
+  margin-top: 8px;
   background: #ddd;
 }
 
 .btn-main {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 12px;
   background: #007bff;
   color: white;
 }
@@ -99,37 +104,30 @@ button {
   background: #25d366;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ============================
-   AJUSTE DE TAMANHO NO CELULAR
+   AJUSTE CONFORTÁVEL NO CELULAR
 ============================ */
 @media (max-width: 600px) {
 
-  body {
-    background: #f2f2f2;
-  }
-
   h1 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   h2 {
-    font-size: 17px;
+    font-size: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
   }
 
   input {
-    font-size: 16px;      /* força zoom correto no mobile */
-    padding: 10px;
+    font-size: 16px;     /* evita zoom do navegador */
+    padding: 12px;
   }
 
   th {
-    font-size: 14px;
+    font-size: 15px;
     padding: 8px;
   }
 
@@ -139,28 +137,15 @@ button {
 
   td input {
     font-size: 15px;
-    padding: 8px;
-  }
-
-  /* campos menores só onde precisa */
-  th:nth-child(2),
-  td:nth-child(2),
-  th:nth-child(3),
-  td:nth-child(3),
-  th:nth-child(4),
-  td:nth-child(4) {
-    width: 60px;
+    padding: 10px;
   }
 
   button {
     font-size: 16px;
-    padding: 12px;
-  }
-
-  .btn-main {
-    margin-top: 12px;
+    padding: 14px;
   }
 }
+
 
 
 
