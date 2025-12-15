@@ -140,44 +140,49 @@ button {
     }
 }
 /* ============================
-   AJUSTE MOBILE – TABELA FIXA
+   FORÇAR TABELA EM LINHA NO MOBILE
 ============================ */
 @media (max-width: 768px) {
 
   table {
+    display: table !important;
     width: 100%;
-    table-layout: fixed; /* força respeitar larguras */
+    table-layout: fixed;
   }
 
-  th:nth-child(2),
-  td:nth-child(2) {
-    width: 70px; /* TAMANHO */
+  thead {
+    display: table-header-group !important;
   }
+
+  tbody {
+    display: table-row-group !important;
+  }
+
+  tr {
+    display: table-row !important;
+  }
+
+  th,
+  td {
+    display: table-cell !important;
+    vertical-align: middle;
+  }
+
+  /* larguras */
+  th:nth-child(2),
+  td:nth-child(2) { width: 70px; }
 
   th:nth-child(3),
-  td:nth-child(3) {
-    width: 70px; /* NÚMERO */
-  }
+  td:nth-child(3) { width: 70px; }
 
   th:nth-child(4),
-  td:nth-child(4) {
-    width: 60px; /* QUANTIDADE */
-  }
+  td:nth-child(4) { width: 60px; }
 
   td input {
     width: 100%;
     font-size: 13px;
     padding: 4px;
   }
-
-  th,
-  td {
-    padding: 4px;
-  }
-
-  .btn-remover {
-    padding: 4px 6px;
-    font-size: 12px;
-  }
 }
+
 
