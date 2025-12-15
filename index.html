@@ -1,50 +1,106 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTBOT - Pedido</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+function adicionarLinha() {
+    const lista = document.getElementById("listaItens");
 
-<div class="app">
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+        <td><input placeholder="Nome"></td>
+        <td><input placeholder="Tamanho"></td>
+        <td><input placeholder="Número"></td>
+        <td><input type="number" min="1" placeholder="Qtd"></td>
+        <td><button onclick="this.closest('tr').remove()">❌</button></td>
+    `;
 
-    <h1>Preenchimento de Pedido</h1>
+    lista.appendChild(tr);
+}
 
-    <h2>👤 Dados do Cliente</h2>
-    <div class="grid">
-        <input type="text" id="clienteNome" placeholder="Nome do Cliente">
-        <input type="text" id="clienteTelefone" placeholder="Telefone">
-    </div>
+// cria 1 linha inicial
+adicionarLinha();
 
-    <h2>📦 Itens do Pedido</h2>
+/* ================================
+   GERAR ARQUIVO GTB
+================================ */
+function gerarArquivo() {
+    let conteudo = "";
 
-    <div class="tabela-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Tam</th>
-                    <th>Nº</th>
-                    <th>Qtd</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="listaItens"></tbody>
-        </table>
-    </div>
+    // CABEÇALHO CLIENTE
+    conteudo += "DADOS DO CLIENTE;\n";
+    const nomeCliente = document.getElementById("clienteNome").value || "";
+    const telefone = document.getElementById("clienteTelefone").value || "";
+    conteudo += `NOME;${nomeCliente}\n`;
+    conteudo += `TELEFONE;${telefone}\n`;
+    conteudo += ";\n";
 
-    <button class="btn-sec" onclick="adicionarLinha()">➕ Adicionar Item</button>
+    // CABEÇALHO ITENS
+    conteudo += "ITEM;TAMANHO;NÚMERO;QUANTIDADE\n";
 
-    <button class="btn-main" onclick="gerarArquivo()">💾 Baixar Arquivo GTB</button>
+    const linhas = document.querySelectorAll("#listaItens tr");
+    let temLinha = false;
 
-    <button class="btn-main compartilhar" onclick="compartilharPedido()">
-        📤 Enviar Pedido no WhatsApp
-    </button>
+    linhas.forEach(linha => {
+        const inputs = linha.querySelectorAll("input");
+        const item = inputs[0].value || "";
+        const tamanho = inputs[1].value || "";
+        const numero = inputs[2].value || "";
+        const quantidade = inputs[3].value || "";
 
-</div>
+        if (item || tamanho || numero || quantidade) {
+            temLinha = true;
+            conteudo += `${item};${tamanho};${numero};${quantidade}\n`;
+        }
+    });
 
-<script src="script.js"></script>
-</body>
-</html>
+    if (!temLinha) {
+        alert("Preencha pelo menos um item.");
+        return;
+    }
+
+    const blob = new Blob([conteudo], { type: "text/plain;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "GTBOT_DADOS_PACOTE.gtb";
+    a.click();
+}
+
+/* ================================
+   COMPARTILHAR TEXTO (WHATSAPP)
+================================ */
+function compartilharPedido() {
+    let texto = "DADOS DO CLIENTE;\n";
+    const nomeCliente = document.getElementById("clienteNome").value || "";
+    const telefone = document.getElementById("clienteTelefone").value || "";
+    texto += `NOME;${nomeCliente}\n`;
+    texto += `TELEFONE;${telefone}\n`;
+    texto += ";\n";
+    texto += "ITEM;TAMANHO;NÚMERO;QUANTIDADE\n";
+
+    const linhas = document.querySelectorAll("#listaItens tr");
+    let temItem = false;
+
+    linhas.forEach(linha => {
+        const inputs = linha.querySelectorAll("input");
+        const item = inputs[0].value || "";
+        const tamanho = inputs[1].value || "";
+        const numero = inputs[2].value || "";
+        const quantidade = inputs[3].value || "";
+
+        if (item || tamanho || numero || quantidade) {
+            temItem = true;
+            texto += `${item};${tamanho};${numero};${quantidade}\n`;
+        }
+    });
+
+    if (!temItem) {
+        alert("Preencha pelo menos um item.");
+        return;
+    }
+
+    if (navigator.share) {
+        navigator.share({
+            title: "Pedido GTBOT",
+            text: texto
+        });
+    } else {
+        alert("Compartilhamento não suportado neste dispositivo.");
+    }
+}
+
