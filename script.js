@@ -3,25 +3,11 @@ function adicionarLinha() {
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
-        <td data-label="Nome">
-            <input type="text" placeholder="Nome">
-        </td>
-
-        <td data-label="Tamanho">
-            <input type="text" placeholder="Tamanho">
-        </td>
-
-        <td data-label="Número">
-            <input type="text" placeholder="Número">
-        </td>
-
-        <td data-label="Quantidade">
-            <input type="number" min="1" placeholder="Qtd">
-        </td>
-
-        <td>
-            <button class="btn-remover" onclick="this.closest('tr').remove()">❌</button>
-        </td>
+        <td><input placeholder="Nome"></td>
+        <td><input placeholder="Tamanho"></td>
+        <td><input placeholder="Número"></td>
+        <td><input type="number" min="1" placeholder="Qtd"></td>
+        <td><button onclick="this.closest('tr').remove()">❌</button></td>
     `;
 
     lista.appendChild(tr);
@@ -122,4 +108,5 @@ function compartilharPedido() {
         alert("Compartilhamento não suportado neste dispositivo.");
     }
 }
+
 
