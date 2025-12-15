@@ -4,8 +4,8 @@ function adicionarLinha() {
     const tr = document.createElement("tr");
     tr.innerHTML = `
         <td><input placeholder="Nome"></td>
-        <td><input placeholder="Tamanho"></td>
-        <td><input placeholder="Número"></td>
+        <td><input placeholder="Tam"></td>
+        <td><input placeholder="Nº"></td>
         <td><input type="number" min="1" placeholder="Qtd"></td>
         <td><button onclick="this.closest('tr').remove()">❌</button></td>
     `;
@@ -13,45 +13,43 @@ function adicionarLinha() {
     lista.appendChild(tr);
 }
 
+// cria uma linha inicial
+adicionarLinha();
 
 /* ================================
-   GERAR ARQUIVO GTB (PADRÃO MACRO)
+   GERAR ARQUIVO GTB
 ================================ */
 function gerarArquivo() {
     let conteudo = "";
 
-    // CABEÇALHO CLIENTE
     conteudo += "DADOS DO CLIENTE;\n";
 
-    const nomeCliente = document.getElementById("clienteNome").value || "";
-    const telefone = document.getElementById("clienteTelefone").value || "";
+    const nome = document.getElementById("clienteNome").value || "";
+    const tel = document.getElementById("clienteTelefone").value || "";
 
-    conteudo += `NOME;${nomeCliente}\n`;
-    conteudo += `TELEFONE;${telefone}\n`;
+    conteudo += `NOME;${nome}\n`;
+    conteudo += `TELEFONE;${tel}\n`;
     conteudo += ";\n";
-
-    // CABEÇALHO ITENS
     conteudo += "ITEM;TAMANHO;NÚMERO;QUANTIDADE\n";
 
     const linhas = document.querySelectorAll("#listaItens tr");
-    let temLinha = false;
+    let temItem = false;
 
     linhas.forEach(linha => {
         const inputs = linha.querySelectorAll("input");
 
         const item = inputs[0].value || "";
-        const tamanho = inputs[1].value || "";
-        const numero = inputs[2].value || "";
-        const quantidade = inputs[3].value || "";
+        const tam = inputs[1].value || "";
+        const num = inputs[2].value || "";
+        const qtd = inputs[3].value || "";
 
-        // só ignora linha totalmente vazia
-        if (item || tamanho || numero || quantidade) {
-            temLinha = true;
-            conteudo += `${item};${tamanho};${numero};${quantidade}\n`;
+        if (item || tam || num || qtd) {
+            temItem = true;
+            conteudo += `${item};${tam};${num};${qtd}\n`;
         }
     });
 
-    if (!temLinha) {
+    if (!temItem) {
         alert("Preencha pelo menos um item.");
         return;
     }
@@ -64,16 +62,16 @@ function gerarArquivo() {
 }
 
 /* ================================
-   COMPARTILHAR TEXTO (WHATSAPP)
+   COMPARTILHAR WHATSAPP
 ================================ */
 function compartilharPedido() {
     let texto = "DADOS DO CLIENTE;\n";
 
-    const nomeCliente = document.getElementById("clienteNome").value || "";
-    const telefone = document.getElementById("clienteTelefone").value || "";
+    const nome = document.getElementById("clienteNome").value || "";
+    const tel = document.getElementById("clienteTelefone").value || "";
 
-    texto += `NOME;${nomeCliente}\n`;
-    texto += `TELEFONE;${telefone}\n`;
+    texto += `NOME;${nome}\n`;
+    texto += `TELEFONE;${tel}\n`;
     texto += ";\n";
     texto += "ITEM;TAMANHO;NÚMERO;QUANTIDADE\n";
 
@@ -84,13 +82,13 @@ function compartilharPedido() {
         const inputs = linha.querySelectorAll("input");
 
         const item = inputs[0].value || "";
-        const tamanho = inputs[1].value || "";
-        const numero = inputs[2].value || "";
-        const quantidade = inputs[3].value || "";
+        const tam = inputs[1].value || "";
+        const num = inputs[2].value || "";
+        const qtd = inputs[3].value || "";
 
-        if (item || tamanho || numero || quantidade) {
+        if (item || tam || num || qtd) {
             temItem = true;
-            texto += `${item};${tamanho};${numero};${quantidade}\n`;
+            texto += `${item};${tam};${num};${qtd}\n`;
         }
     });
 
@@ -105,8 +103,9 @@ function compartilharPedido() {
             text: texto
         });
     } else {
-        alert("Compartilhamento não suportado neste dispositivo.");
+        alert("Seu celular não suporta compartilhamento direto.");
     }
 }
+
 
 
