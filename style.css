@@ -1,189 +1,111 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: radial-gradient(circle at top, #1e293b, #020617);
-    color: #e5e7eb;
+  margin: 0;
+  background: #f2f2f2;
 }
 
 .app {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
 }
 
-/* HEADER */
-.header {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    padding: 28px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-    margin-bottom: 25px;
+h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-.header h1 {
-    margin: 0;
-    font-size: 34px;
-    letter-spacing: 2px;
+h2 {
+  font-size: 15px;
+  margin: 14px 0 6px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
 }
 
-.header p {
-    margin-top: 6px;
-    opacity: 0.9;
-}
-
-/* CARD */
-.card {
-    background: #f8fafc;
-    color: #020617;
-    border-radius: 20px;
-    padding: 22px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-
-.card h2 {
-    margin-top: 0;
-    margin-bottom: 18px;
-}
-
-/* FORM */
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
-.campo label {
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 6px;
-    display: block;
+input {
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
 }
 
-.campo input {
-    width: 100%;
-    padding: 14px;
-    border-radius: 14px;
-    border: 1px solid #cbd5f5;
-    font-size: 15px;
-}
-
-/* TABELA */
 .tabela-wrapper {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 table {
-    width: 100%;
-    min-width: 600px;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
 th {
-    background: #e2e8f0;
-    padding: 12px;
+  background: #e5e5e5;
+  font-size: 13px;
+  padding: 6px;
+  text-align: left;
 }
 
 td {
-    padding: 8px;
-    border-top: 1px solid #e5e7eb;
+  padding: 4px;
 }
 
 td input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #cbd5f5;
+  width: 100%;
+  padding: 4px;
+  font-size: 13px;
 }
 
-/* BOTÕES */
+th:nth-child(2),
+td:nth-child(2) { width: 70px; }
+
+th:nth-child(3),
+td:nth-child(3) { width: 70px; }
+
+th:nth-child(4),
+td:nth-child(4) { width: 60px; }
+
 button {
-    border: none;
-    border-radius: 16px;
-    font-weight: bold;
-    cursor: pointer;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
 }
 
 .btn-sec {
-    margin-top: 12px;
-    padding: 12px 18px;
-    background: #e5e7eb;
+  margin-top: 6px;
+  background: #ddd;
 }
 
 .btn-main {
-    width: 100%;
-    margin-top: 18px;
-    padding: 18px;
-    font-size: 18px;
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: white;
-    box-shadow: 0 12px 30px rgba(34,197,94,0.45);
+  width: 100%;
+  margin-top: 10px;
+  background: #007bff;
+  color: white;
 }
 
 .compartilhar {
-    background: linear-gradient(135deg, #25d366, #128c7e);
+  background: #25d366;
 }
 
 /* MOBILE */
-@media (max-width: 1000px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    table {
-        font-size: 13px;
-    }
-}
-/* ============================
-   FORÇAR TABELA EM LINHA NO MOBILE
-============================ */
-@media (max-width: 1000px) {
-
-  table {
-    display: table !important;
-    width: 100%;
-    table-layout: fixed;
-  }
-
-  thead {
-    display: table-header-group !important;
-  }
-
-  tbody {
-    display: table-row-group !important;
-  }
-
-  tr {
-    display: table-row !important;
-  }
-
-  th,
-  td {
-    display: table-cell !important;
-    vertical-align: middle;
-  }
-
-  /* larguras */
-  th:nth-child(2),
-  td:nth-child(2) { width: 70px; }
-
-  th:nth-child(3),
-  td:nth-child(3) { width: 70px; }
-
-  th:nth-child(4),
-  td:nth-child(4) { width: 60px; }
-
-  td input {
-    width: 100%;
-    font-size: 13px;
-    padding: 4px;
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
+
 
 
 
