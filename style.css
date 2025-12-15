@@ -1,7 +1,6 @@
 /* =========================
    ESTILO GERAL
 ========================= */
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
@@ -96,14 +95,14 @@ button {
 /* =========================
    MOBILE — INDIVIDUAL
 ========================= */
-@media (max-width: 100px) {
+@media (max-width: 600px) {
 
   html {
-    font-size: 18px; /* base maior no celular */
+    font-size: 18px;
   }
 
   .grid {
-    grid-template-columns: 1fr; /* cliente em coluna */
+    grid-template-columns: 1fr;
     gap: 15px;
   }
 
@@ -139,7 +138,6 @@ button {
     text-align: center;
   }
 
-  /* BOTÕES MAIORES */
   button {
     font-size: 1.3rem;
     padding: 18px 24px;
