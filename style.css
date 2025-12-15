@@ -93,7 +93,7 @@ button {
 }
 
 /* =========================
-   MOBILE — INDIVIDUAL
+   MOBILE — FORMATO CORRIGIDO
 ========================= */
 @media (max-width: 600px) {
 
@@ -102,7 +102,7 @@ button {
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* cada campo em uma linha */
     gap: 15px;
   }
 
@@ -110,7 +110,7 @@ button {
     font-size: 2rem;
   }
 
-  /* LARGURA E ALTURA DAS CAIXAS DE TEXTO DA TABELA */
+  /* Inputs da tabela maiores no mobile */
   td:nth-child(1) input {  /* NOME */
     font-size: 1.5rem;
     padding: 20px;
@@ -142,10 +142,7 @@ button {
     font-size: 1.3rem;
     padding: 18px 24px;
   }
-
 }
-
-
 
 
 
