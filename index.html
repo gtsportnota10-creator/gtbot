@@ -3,54 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido</title>
+    <title>GTBOT - Pedido</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="app">
 
-    <header class="header">
-        <h1>Preenchimento de Pedido</h1>
-        
-    </header>
+    <h1>Preenchimento de Pedido</h1>
 
-    <section class="card">
-        <h2>👤 Cliente</h2>
+    <h2>👤 Dados do Cliente</h2>
+    <div class="grid">
+        <input type="text" id="clienteNome" placeholder="Nome do Cliente">
+        <input type="text" id="clienteTelefone" placeholder="Telefone">
+    </div>
 
-        <div class="grid">
-            <div class="campo">
-                <label>Nome do Cliente</label>
-                <input type="text" id="clienteNome" placeholder="Ex: João Silva">
-            </div>
+    <h2>📦 Itens do Pedido</h2>
 
-            <div class="campo">
-                <label>Telefone</label>
-                <input type="text" id="clienteTelefone" placeholder="(99) 99999-9999">
-            </div>
-        </div>
-    </section>
+    <div class="tabela-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tam</th>
+                    <th>Nº</th>
+                    <th>Qtd</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="listaItens"></tbody>
+        </table>
+    </div>
 
-    <section class="card">
-        <h2>Itens do Pedido</h2>
-
-        <div class="tabela-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Tamanho</th>
-                        <th>Número</th>
-                        <th>Qtd</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="listaItens"></tbody>
-            </table>
-        </div>
-
-        <button class="btn-sec" onclick="adicionarLinha()">➕ Adicionar Item</button>
-    </section>
+    <button class="btn-sec" onclick="adicionarLinha()">➕ Adicionar Item</button>
 
     <button class="btn-main" onclick="gerarArquivo()">💾 Baixar Arquivo GTB</button>
 
@@ -63,4 +48,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
