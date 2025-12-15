@@ -3,42 +3,47 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ESCALA BASE */
+html {
+  font-size: 18px; /* <-- AQUI está a chave */
+}
+
 body {
   margin: 0;
   background: #f2f2f2;
 }
 
 .app {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  padding: 12px;
+  padding: 16px;
 }
 
 /* TÍTULOS */
 h1 {
-  font-size: 22px;
-  margin-bottom: 12px;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
 }
 
 h2 {
-  font-size: 16px;
-  margin: 16px 0 6px;
+  font-size: 1.2rem;
+  margin: 20px 0 8px;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 /* CAMPOS CLIENTE */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
 }
 
 input {
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #bbb;
-  border-radius: 6px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #999;
+  border-radius: 8px;
 }
 
 /* TABELA */
@@ -54,48 +59,48 @@ table {
 
 th {
   background: #e5e5e5;
-  font-size: 13px;
-  padding: 6px;
+  font-size: 0.9rem;
+  padding: 10px;
   text-align: left;
 }
 
 td {
-  padding: 4px;
+  padding: 8px;
 }
 
 td input {
   width: 100%;
-  padding: 6px;
-  font-size: 13px;
+  padding: 10px;
+  font-size: 0.95rem;
 }
 
-/* larguras compactas */
+/* larguras equilibradas */
 th:nth-child(2),
-td:nth-child(2) { width: 70px; }
+td:nth-child(2) { width: 90px; }
 
 th:nth-child(3),
-td:nth-child(3) { width: 70px; }
+td:nth-child(3) { width: 90px; }
 
 th:nth-child(4),
-td:nth-child(4) { width: 60px; }
+td:nth-child(4) { width: 80px; }
 
 /* BOTÕES */
 button {
   cursor: pointer;
   border: none;
-  border-radius: 8px;
-  padding: 10px;
-  font-size: 14px;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 1rem;
 }
 
 .btn-sec {
-  margin-top: 8px;
+  margin-top: 10px;
   background: #ddd;
 }
 
 .btn-main {
   width: 100%;
-  margin-top: 12px;
+  margin-top: 14px;
   background: #007bff;
   color: white;
 }
@@ -104,48 +109,18 @@ button {
   background: #25d366;
 }
 
-/* ============================
-   AJUSTE CONFORTÁVEL NO CELULAR
-============================ */
+/* MOBILE */
 @media (max-width: 600px) {
 
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 18px;
+  html {
+    font-size: 19px; /* ainda mais confortável */
   }
 
   .grid {
     grid-template-columns: 1fr;
   }
 
-  input {
-    font-size: 16px;     /* evita zoom do navegador */
-    padding: 12px;
-  }
-
-  th {
-    font-size: 15px;
-    padding: 8px;
-  }
-
-  td {
-    padding: 6px;
-  }
-
-  td input {
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  button {
-    font-size: 16px;
-    padding: 14px;
-  }
 }
-
 
 
 
