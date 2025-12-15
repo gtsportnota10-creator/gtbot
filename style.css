@@ -3,9 +3,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ESCALA BASE */
+/* ============================
+   ESCALA GERAL MUITO MAIOR
+============================ */
 html {
-  font-size: 18px; /* <-- AQUI está a chave */
+  font-size: 22px; /* BASE GIGANTE */
 }
 
 body {
@@ -14,39 +16,41 @@ body {
 }
 
 .app {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
-  padding: 16px;
+  padding: 24px;
 }
 
 /* TÍTULOS */
 h1 {
-  font-size: 1.6rem;
-  margin-bottom: 16px;
+  font-size: 2rem;
+  margin-bottom: 24px;
 }
 
 h2 {
-  font-size: 1.2rem;
-  margin: 20px 0 8px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 6px;
+  font-size: 1.4rem;
+  margin: 28px 0 14px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
 }
 
 /* CAMPOS CLIENTE */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 20px;
 }
 
 input {
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #999;
-  border-radius: 8px;
+  padding: 18px;
+  font-size: 1.1rem;
+  border: 2px solid #999;
+  border-radius: 12px;
 }
 
-/* TABELA */
+/* ============================
+   TABELA
+============================ */
 .tabela-wrapper {
   overflow-x: auto;
 }
@@ -58,49 +62,52 @@ table {
 }
 
 th {
-  background: #e5e5e5;
-  font-size: 0.9rem;
-  padding: 10px;
+  background: #e0e0e0;
+  font-size: 1.05rem;
+  padding: 16px;
   text-align: left;
 }
 
 td {
-  padding: 8px;
+  padding: 14px;
 }
 
 td input {
   width: 100%;
-  padding: 10px;
-  font-size: 0.95rem;
+  padding: 16px;
+  font-size: 1.05rem;
+  border-radius: 10px;
 }
 
-/* larguras equilibradas */
+/* COLUNAS CONTROLADAS (MESMO GRANDES) */
 th:nth-child(2),
-td:nth-child(2) { width: 90px; }
+td:nth-child(2) { width: 130px; }
 
 th:nth-child(3),
-td:nth-child(3) { width: 90px; }
+td:nth-child(3) { width: 130px; }
 
 th:nth-child(4),
-td:nth-child(4) { width: 80px; }
+td:nth-child(4) { width: 110px; }
 
-/* BOTÕES */
+/* ============================
+   BOTÕES
+============================ */
 button {
   cursor: pointer;
   border: none;
-  border-radius: 10px;
-  padding: 14px;
-  font-size: 1rem;
+  border-radius: 14px;
+  padding: 20px;
+  font-size: 1.1rem;
 }
 
 .btn-sec {
-  margin-top: 10px;
-  background: #ddd;
+  margin-top: 18px;
+  background: #d6d6d6;
 }
 
 .btn-main {
   width: 100%;
-  margin-top: 14px;
+  margin-top: 20px;
   background: #007bff;
   color: white;
 }
@@ -109,19 +116,23 @@ button {
   background: #25d366;
 }
 
-/* MOBILE */
+/* ============================
+   MOBILE — AINDA MAIOR
+============================ */
 @media (max-width: 600px) {
 
   html {
-    font-size: 19px; /* ainda mais confortável */
+    font-size: 24px; /* GIGANTE NO CELULAR */
   }
 
   .grid {
     grid-template-columns: 1fr;
   }
 
+  h1 {
+    text-align: center;
+  }
 }
-
 
 
 
