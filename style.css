@@ -106,6 +106,62 @@ button {
   }
 }
 
+/* ============================
+   AJUSTE DE TAMANHO NO CELULAR
+============================ */
+@media (max-width: 600px) {
+
+  body {
+    background: #f2f2f2;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 17px;
+  }
+
+  input {
+    font-size: 16px;      /* força zoom correto no mobile */
+    padding: 10px;
+  }
+
+  th {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  td {
+    padding: 6px;
+  }
+
+  td input {
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  /* campos menores só onde precisa */
+  th:nth-child(2),
+  td:nth-child(2),
+  th:nth-child(3),
+  td:nth-child(3),
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 60px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .btn-main {
+    margin-top: 12px;
+  }
+}
+
 
 
 
