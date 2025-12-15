@@ -116,22 +116,43 @@ button {
   background: #25d366;
 }
 
-/* ============================
-   MOBILE — AINDA MAIOR
-============================ */
-@media (max-width: 100px) {
+@media (max-width: 600px) {
 
   html {
-    font-size: 22px; /* GIGANTE NO CELULAR */
+    font-size: 22px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
+  /* =========================
+     INPUTS DA TABELA (LINHA)
+  ========================== */
+
+  /* NOME */
+  td:nth-child(1) input {
+    font-size: 1.25rem;
+    padding: 22px;
   }
 
-  h1 {
+  /* TAMANHO */
+  td:nth-child(2) input {
+    font-size: 1.1rem;
+    padding: 18px;
     text-align: center;
   }
+
+  /* NÚMERO */
+  td:nth-child(3) input {
+    font-size: 1.05rem;
+    padding: 16px;
+    text-align: center;
+  }
+
+  /* QUANTIDADE */
+  td:nth-child(4) input {
+    font-size: 1.1rem;
+    padding: 18px;
+    text-align: center;
+  }
+
 }
 
 
