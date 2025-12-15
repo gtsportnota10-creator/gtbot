@@ -96,7 +96,7 @@ button {
 /* =========================
    MOBILE — INDIVIDUAL
 ========================= */
-@media (max-width: 600px) {
+@media (max-width: 100px) {
 
   html {
     font-size: 18px; /* base maior no celular */
@@ -146,6 +146,7 @@ button {
   }
 
 }
+
 
 
 
