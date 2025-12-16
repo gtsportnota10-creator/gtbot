@@ -93,54 +93,40 @@ button {
 }
 
 /* =========================
-   MOBILE — FORMATO CORRIGIDO
+   MOBILE — MELHORADO
 ========================= */
 @media (max-width: 600px) {
 
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .grid {
-    grid-template-columns: 1fr; /* cada campo em uma linha */
+    grid-template-columns: 1fr; /* Cada campo ocupa a largura inteira */
     gap: 15px;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
-  /* Inputs da tabela maiores no mobile */
-  td:nth-child(1) input {  /* NOME */
-    font-size: 1.5rem;
-    padding: 20px;
-    width: 150px;
+  /* Ajuste para os inputs no mobile */
+  .campo input {
+    font-size: 1rem;
+    padding: 12px;
   }
 
-  td:nth-child(2) input {  /* TAMANHO */
-    font-size: 1.3rem;
-    padding: 18px;
-    width: 80px;
-    text-align: center;
-  }
-
-  td:nth-child(3) input {  /* NÚMERO */
-    font-size: 1.3rem;
-    padding: 18px;
-    width: 80px;
-    text-align: center;
-  }
-
-  td:nth-child(4) input {  /* QUANTIDADE */
-    font-size: 1.3rem;
-    padding: 18px;
-    width: 80px;
-    text-align: center;
+  /* Ajuste nas caixas da tabela para mobile */
+  td input {
+    padding: 12px;
+    font-size: 1rem;
+    width: calc(100% - 20px); /* Ajuste para não ocupar toda a tela */
+    margin: 5px 0;
   }
 
   button {
-    font-size: 1.3rem;
-    padding: 18px 24px;
+    font-size: 1rem;
+    padding: 15px 20px;
   }
 }
 
