@@ -4,8 +4,8 @@ function adicionarLinha() {
     const tr = document.createElement("tr");
     tr.innerHTML = `
         <td><input placeholder="Nome"></td>
-        <td><input placeholder="Tam"></td>
-        <td><input placeholder="Nº"></td>
+        <td><input placeholder="Tamanho"></td>
+        <td><input placeholder="Número"></td>
         <td><input type="number" min="1" placeholder="Qtd"></td>
         <td><button onclick="this.closest('tr').remove()">❌</button></td>
     `;
@@ -13,43 +13,42 @@ function adicionarLinha() {
     lista.appendChild(tr);
 }
 
-// cria uma linha inicial
+// Cria 1 linha inicial
 adicionarLinha();
 
 /* ================================
-   GERAR ARQUIVO GTB
+   GERAR ARQUIVO GTB (PADRÃO MACRO)
 ================================ */
 function gerarArquivo() {
     let conteudo = "";
 
     conteudo += "DADOS DO CLIENTE;\n";
 
-    const nome = document.getElementById("clienteNome").value || "";
-    const tel = document.getElementById("clienteTelefone").value || "";
+    const nomeCliente = document.getElementById("clienteNome").value || "";
+    const telefone = document.getElementById("clienteTelefone").value || "";
 
-    conteudo += `NOME;${nome}\n`;
-    conteudo += `TELEFONE;${tel}\n`;
+    conteudo += `NOME;${nomeCliente}\n`;
+    conteudo += `TELEFONE;${telefone}\n`;
     conteudo += ";\n";
     conteudo += "ITEM;TAMANHO;NÚMERO;QUANTIDADE\n";
 
     const linhas = document.querySelectorAll("#listaItens tr");
-    let temItem = false;
+    let temLinha = false;
 
     linhas.forEach(linha => {
         const inputs = linha.querySelectorAll("input");
-
         const item = inputs[0].value || "";
-        const tam = inputs[1].value || "";
-        const num = inputs[2].value || "";
-        const qtd = inputs[3].value || "";
+        const tamanho = inputs[1].value || "";
+        const numero = inputs[2].value || "";
+        const quantidade = inputs[3].value || "";
 
-        if (item || tam || num || qtd) {
-            temItem = true;
-            conteudo += `${item};${tam};${num};${qtd}\n`;
+        if (item || tamanho || numero || quantidade) {
+            temLinha = true;
+            conteudo += `${item};${tamanho};${numero};${quantidade}\n`;
         }
     });
 
-    if (!temItem) {
+    if (!temLinha) {
         alert("Preencha pelo menos um item.");
         return;
     }
@@ -62,16 +61,16 @@ function gerarArquivo() {
 }
 
 /* ================================
-   COMPARTILHAR WHATSAPP
+   COMPARTILHAR TEXTO (WHATSAPP)
 ================================ */
 function compartilharPedido() {
     let texto = "DADOS DO CLIENTE;\n";
 
-    const nome = document.getElementById("clienteNome").value || "";
-    const tel = document.getElementById("clienteTelefone").value || "";
+    const nomeCliente = document.getElementById("clienteNome").value || "";
+    const telefone = document.getElementById("clienteTelefone").value || "";
 
-    texto += `NOME;${nome}\n`;
-    texto += `TELEFONE;${tel}\n`;
+    texto += `NOME;${nomeCliente}\n`;
+    texto += `TELEFONE;${telefone}\n`;
     texto += ";\n";
     texto += "ITEM;TAMANHO;NÚMERO;QUANTIDADE\n";
 
@@ -80,15 +79,14 @@ function compartilharPedido() {
 
     linhas.forEach(linha => {
         const inputs = linha.querySelectorAll("input");
-
         const item = inputs[0].value || "";
-        const tam = inputs[1].value || "";
-        const num = inputs[2].value || "";
-        const qtd = inputs[3].value || "";
+        const tamanho = inputs[1].value || "";
+        const numero = inputs[2].value || "";
+        const quantidade = inputs[3].value || "";
 
-        if (item || tam || num || qtd) {
+        if (item || tamanho || numero || quantidade) {
             temItem = true;
-            texto += `${item};${tam};${num};${qtd}\n`;
+            texto += `${item};${tamanho};${numero};${quantidade}\n`;
         }
     });
 
@@ -103,10 +101,9 @@ function compartilharPedido() {
             text: texto
         });
     } else {
-        alert("Seu celular não suporta compartilhamento direto.");
+        alert("Compartilhamento não suportado neste dispositivo.");
     }
 }
-
 
 
 
