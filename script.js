@@ -13,7 +13,7 @@ function adicionarLinha() {
     lista.appendChild(tr);
 }
 
-// Cria 1 linha inicial
+// cria 1 linha inicial
 adicionarLinha();
 
 /* ================================
@@ -22,6 +22,7 @@ adicionarLinha();
 function gerarArquivo() {
     let conteudo = "";
 
+    // CABEÇALHO CLIENTE
     conteudo += "DADOS DO CLIENTE;\n";
 
     const nomeCliente = document.getElementById("clienteNome").value || "";
@@ -30,6 +31,8 @@ function gerarArquivo() {
     conteudo += `NOME;${nomeCliente}\n`;
     conteudo += `TELEFONE;${telefone}\n`;
     conteudo += ";\n";
+
+    // CABEÇALHO ITENS
     conteudo += "ITEM;TAMANHO;NÚMERO;QUANTIDADE\n";
 
     const linhas = document.querySelectorAll("#listaItens tr");
@@ -37,11 +40,13 @@ function gerarArquivo() {
 
     linhas.forEach(linha => {
         const inputs = linha.querySelectorAll("input");
+
         const item = inputs[0].value || "";
         const tamanho = inputs[1].value || "";
         const numero = inputs[2].value || "";
         const quantidade = inputs[3].value || "";
 
+        // só ignora linha totalmente vazia
         if (item || tamanho || numero || quantidade) {
             temLinha = true;
             conteudo += `${item};${tamanho};${numero};${quantidade}\n`;
@@ -79,6 +84,7 @@ function compartilharPedido() {
 
     linhas.forEach(linha => {
         const inputs = linha.querySelectorAll("input");
+
         const item = inputs[0].value || "";
         const tamanho = inputs[1].value || "";
         const numero = inputs[2].value || "";
@@ -104,6 +110,8 @@ function compartilharPedido() {
         alert("Compartilhamento não suportado neste dispositivo.");
     }
 }
+
+
 
 
 
