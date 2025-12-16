@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTBOT - Dados do Pedido</title>
+    <title>GTBOT Pedido</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,17 +11,19 @@
 <div class="app">
 
     <header class="header">
-        <h1>Preenchimento de Pedido</h1>
+        <h1>GTBOT</h1>
+        <p>Preenchimento de Pedido</p>
     </header>
 
-    <!-- Dados do Cliente -->
     <section class="card">
         <h2>👤 Cliente</h2>
+
         <div class="grid">
             <div class="campo">
                 <label>Nome do Cliente</label>
                 <input type="text" id="clienteNome" placeholder="Ex: João Silva">
             </div>
+
             <div class="campo">
                 <label>Telefone</label>
                 <input type="text" id="clienteTelefone" placeholder="(99) 99999-9999">
@@ -29,9 +31,9 @@
         </div>
     </section>
 
-    <!-- Itens do Pedido -->
     <section class="card">
-        <h2>Itens do Pedido</h2>
+        <h2>📦 Itens do Pedido</h2>
+
         <div class="tabela-wrapper">
             <table>
                 <thead>
@@ -40,18 +42,21 @@
                         <th>Tamanho</th>
                         <th>Número</th>
                         <th>Qtd</th>
-                        <th>Ação</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="listaItens"></tbody>
             </table>
         </div>
+
         <button class="btn-sec" onclick="adicionarLinha()">➕ Adicionar Item</button>
     </section>
 
-    <!-- Botões principais -->
-    <button class="btn-main" onclick="gerarArquivo()">💾 Baixar Arquivo</button>
-    <button class="btn-main compartilhar" onclick="compartilharPedido()">📤 Enviar Pedido no WhatsApp</button>
+    <button class="btn-main" onclick="gerarArquivo()">💾 Baixar Arquivo GTB</button>
+
+    <button class="btn-main compartilhar" onclick="compartilharPedido()">
+        📤 Enviar Pedido no WhatsApp
+    </button>
 
 </div>
 
